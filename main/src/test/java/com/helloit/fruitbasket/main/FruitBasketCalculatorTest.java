@@ -1,9 +1,9 @@
 package com.helloit.fruitbasket.main;
 
+import com.helloit.fruitbasket.main.exceptions.AnotherFruitBasketException;
+import com.helloit.fruitbasket.main.exceptions.FruitBasketException;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.io.IOException;
 
 /**
  *
@@ -30,7 +30,7 @@ public class FruitBasketCalculatorTest {
             try {
                 final double totalPrice = priceCalculator.calculateTotalPrice(basket);
                 Assert.assertEquals("Checking price", 2.4, totalPrice, 0);
-            } catch (final FruitBasketException | AnotherFruitBasketException ex) {
+            } catch (final FruitBasketException ex) { //| AnotherFruitBasketException ex
                 System.out.print("FruitBasketException!!!! " + ex.getMessage());
                 throw new FruitBasketException("Test exception", ex);
 //            throw new AnotherException(ex);

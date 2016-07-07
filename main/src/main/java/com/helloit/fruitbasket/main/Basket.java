@@ -5,11 +5,21 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class Basket {
+public class Basket implements  Cloneable {
     private List <Fruit> fruits;
 
     public Basket() {
         fruits = new ArrayList<Fruit>();
+    }
+
+    public Basket(List<Fruit> fruits) {
+        this.fruits = new ArrayList<Fruit>(fruits);
+    }
+
+
+    public Basket(Basket basket) {
+        this.fruits = new ArrayList<Fruit>();
+        this.fruits.addAll(basket.fruits);
     }
 
     public void addFruit(final Fruit fruit) {
@@ -39,5 +49,10 @@ public class Basket {
 
     public List<Fruit> getFruits() {
         return Collections.unmodifiableList(fruits);
+    }
+
+    @Override
+    public Basket clone() throws CloneNotSupportedException {
+        return new Basket(this);
     }
 }

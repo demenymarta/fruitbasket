@@ -1,15 +1,16 @@
 package com.helloit.fruitbasket.main;
 
 
-import java.io.IOException;
+import com.helloit.fruitbasket.main.exceptions.AnotherFruitBasketException;
+
 import java.util.List;
 
 public class PriceCalculator {
 
-    public double calculateTotalPrice(final Basket basket) throws AnotherFruitBasketException {
+    public double calculateTotalPrice(final Basket basket)  {
 
         if (basket.getFruits().size() == 0) {
-            throw new AnotherFruitBasketException("Empty basket");
+           // throw new AnotherFruitBasketException("Empty basket");
         }
         double result = .0;
 
