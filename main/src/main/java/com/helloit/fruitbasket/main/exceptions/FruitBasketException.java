@@ -1,4 +1,4 @@
-package com.helloit.fruitbasket.main;
+package com.helloit.fruitbasket.main.exceptions;
 
 /**
  *
